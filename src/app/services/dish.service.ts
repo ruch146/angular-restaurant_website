@@ -13,20 +13,21 @@ export class DishService {
   constructor() { }
 
 
-  getDishes() : Dish[]{
-    return DISHES;
+  getDishes() : Promise<Dish[]>{
+    return Promise.resolve(DISHES);
 
   }
 
-  getDish(id:string) : Dish{
-    return DISHES.filter( (dish)=>(dish.id===id))[0]  
+  getDish(id:string) :Promise<Dish>{
+    //this is direct shortcut method 
+    return  Promise.resolve(DISHES.filter( (dish)=>(dish.id===id))[0] ) 
 
   }
 
   
   //return dish for which featured is set to true
-  getFeaturedDish():Dish{ 
-    return DISHES.filter((dish)=>(dish.featured))[0]
+  getFeaturedDish():Promise<Dish>{ 
+    return  Promise.resolve(DISHES.filter((dish)=>(dish.featured))[0])
 
   }
 }
