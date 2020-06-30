@@ -22,6 +22,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { FormsModule } from '@angular/forms'; 
+//for spinner
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 import { HeaderComponent } from './header/header.component';
@@ -83,7 +85,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     FormsModule,
     MatSelectModule,
     MatSlideToggleModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
 
 
     

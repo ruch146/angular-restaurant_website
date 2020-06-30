@@ -8,8 +8,8 @@
       <hr>
     </div>
   </div>
-
-  <div fxFlex>
+  <!--If dishes is there-->
+  <div fxFlex *ngIf>
     <mat-grid-list cols="2" rowHeight="200px"><!--Sending dish id to dishdetail component-->
       <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]">
         <img height="200px" src={{dish.image}} alt={{dish.name}}>
@@ -19,6 +19,12 @@
       </mat-grid-tile>
     </mat-grid-list>
   </div>
+  <!--If dishes is null this div will be shown-->
+  <div fxFlex *ngIf="dishes">
+    </div>
+    <div [hidden]="dishes">
+      <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+    </div>
   
 </div>
 

@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
    this.dishservice.getFeaturedDish()
    .then((dish)=>this.dish=dish);
     this.promotionservice.getFeaturedPromotion()
-    .then((promotion)=>this.promotion=this.promotion);
+    .then((promotion)=>this.promotion=promotion);
     this.leaderService.getFeaturedLeader()
     .then((leader)=>this.leader=leader);
   }
