@@ -32,9 +32,9 @@ export class DishdetailComponent implements OnInit {
   //when dish component is intialized fetch info from params
   ngOnInit(): void {
 
-    const id = +this.route.snapshot.params['id'];
-    this.dishservice.getDish(JSON.stringify(id))
-    .then((dish)=>this.dish=dish);
+   let id = +this.route.snapshot.params['id'];
+    this.dishservice.getDish(id)
+    .subscribe((dish)=>this.dish=dish);
   }
 
 
