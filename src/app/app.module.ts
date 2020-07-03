@@ -55,7 +55,8 @@ import {MatSliderModule} from '@angular/material/slider'
 //server
 
 import { HttpClientModule } from '@angular/common/http';
-import { baseURL } from './shared/baseurl';//add to providers too
+import { baseURL } from './shared/baseurl';
+import { HighlightDirective } from './directives/highlight.directive';//add to providers too
 
 
 
@@ -73,7 +74,8 @@ import { baseURL } from './shared/baseurl';//add to providers too
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
