@@ -37,6 +37,8 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service'
+
 
 //router module
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -54,6 +56,7 @@ import {MatSliderModule} from '@angular/material/slider'
 
 import { HttpClientModule } from '@angular/common/http';
 import { baseURL } from './shared/baseurl';//add to providers too
+
 
 
 
@@ -103,6 +106,7 @@ import { baseURL } from './shared/baseurl';//add to providers too
     DishService,
     PromotionService,
     LeaderService,
+    ProcessHTTPMsgService,
     {provide:'BaseURL', useValue: baseURL}
   ],
   //this will help us to use login component as dialogue coponent
