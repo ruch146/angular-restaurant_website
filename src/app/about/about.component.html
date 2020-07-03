@@ -53,13 +53,13 @@
     </mat-card>
   </div>
 
-  
+  <h2>Corporate Leadership</h2>
   <div fxFlex>
-    <h2>Corporate Leadership</h2>
+   
     
     <mat-list  *ngIf="leaders" [@expand] fxFlex>
         <mat-list-item *ngFor="let leader of leaders">
-          <img matListAvatar src={{leader.image}} alt={{leader.name}}>
+          <img matListAvatar src="{{BaseURL + leader.image}}" alt={{leader.name}}>
           <h1 matLine>{{leader.name}}  {{leader.abbr}} </h1>
           <p matLine>{{leader.abbr}}</p>
           <h1 matLine>
@@ -67,5 +67,8 @@
           </h1>
         </mat-list-item>
       </mat-list>
+    <div [hidden]="leaders">
+        <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+    </div>
   </div>
 </div>
