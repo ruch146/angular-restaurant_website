@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Inject} from '@angular/core';
 //shared folder just like interface
 import { Dish } from '../shared/dish';
 
@@ -14,10 +14,10 @@ export class MenuComponent implements OnInit {
 
   dishes: Dish[]
 
-  selectDish:Dish;
 
    //now this dishService object is made availabe to you in menu
-  constructor(private dishService:DishService) { }
+  constructor(private dishService:DishService,
+    @Inject('BaseURL') public BaseURL) { }
 
   ngOnInit(): void {
 
@@ -27,10 +27,5 @@ export class MenuComponent implements OnInit {
   }
 
 
-
-  onSelect(dish : Dish){
-    this.selectDish=dish;
-
-  }
 
 }

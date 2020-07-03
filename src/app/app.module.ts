@@ -50,7 +50,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatSliderModule} from '@angular/material/slider'
 
+//server
 
+import { HttpClientModule } from '@angular/common/http';
+import { baseURL } from './shared/baseurl';//add to providers too
 
 
 
@@ -88,7 +91,9 @@ import {MatSliderModule} from '@angular/material/slider'
     MatSlideToggleModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
-    MatSliderModule
+    MatSliderModule,
+    HttpClientModule,
+  
 
 
     
@@ -97,7 +102,8 @@ import {MatSliderModule} from '@angular/material/slider'
   providers: [
     DishService,
     PromotionService,
-    LeaderService
+    LeaderService,
+    {provide:'BaseURL', useValue: baseURL}
   ],
   //this will help us to use login component as dialogue coponent
   entryComponents: [
