@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Dish } from '../shared/dish';
 
 //server for getting dishes
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { baseURL } from '../shared/baseurl';
 
 //of will convert anything into observable
@@ -35,7 +35,7 @@ export class DishService {
   getDish(id: string): Observable<Dish> {
     return this.http.get<Dish>(baseURL + 'dishes/' + id)
     .pipe(catchError(this.processHTTPMsgService.handleError));
-    ;
+  
   }
 
   
@@ -51,8 +51,25 @@ export class DishService {
     .pipe(catchError(error => error));
     
   }
-}
+  //receives modified dish as the parameter 
 
+
+
+
+  //incoming message is in json format
+  putDish(dish: Dish): Observable<Dish> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    return this.http.put<Dish>(baseURL + 'dishes/' + dish.id, dish, httpOptions)
+      .pipe(catchError(this.processHTTPMsgService.handleError));
+
+  }
+  
+
+}
 
 
 //inject it in app module.ts and also add it in provider to make it available to all components
